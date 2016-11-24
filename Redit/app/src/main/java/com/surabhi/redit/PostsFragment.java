@@ -118,10 +118,6 @@ public class PostsFragment extends Fragment implements SwipeRefreshLayout.OnRefr
             Intent intent = new Intent(getActivity(),SignIn.class);
             startActivity(intent);
         }
-        else
-        {
-
-        }
     }
 
     @Override
