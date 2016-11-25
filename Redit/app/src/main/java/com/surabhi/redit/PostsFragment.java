@@ -1,11 +1,8 @@
 package com.surabhi.redit;
 
 import android.app.Fragment;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -109,15 +106,15 @@ public class PostsFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     public void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setRetainInstance(true);
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String access_token = preferences.getString("accessToken","");
-        String refresh_token = preferences.getString("refreshToken","");
+//        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+//        String access_token = preferences.getString("accessToken","");
+//        String refresh_token = preferences.getString("refreshToken","");
 
-        if(access_token == null)
-        {
-            Intent intent = new Intent(getActivity(),SignIn.class);
-            startActivity(intent);
-        }
+//        if(access_token == null)
+//        {
+//            Intent intent = new Intent(getActivity(),SignIn.class);
+//            startActivity(intent);
+//        }
     }
 
     @Override
