@@ -7,6 +7,9 @@
     <ListView
         android:id = "@+id/posts_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        ></ListView>
 
 </android.support.v4.widget.SwipeRefreshLayout>

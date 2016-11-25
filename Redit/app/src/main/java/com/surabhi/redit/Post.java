@@ -1,6 +1,5 @@
 package com.surabhi.redit;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,23 +17,54 @@ public class Post {
     String id;
     Date created_at;
 
-    String getDetails(){
-
-        SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("hh:mm a");
-        String formattedDate = simpleDateFormat.format(created_at);
-
-
-        String details="submitted at " +
-                formattedDate+
-                " by "+
-                author +
-                "\n" +
-                numComments +
-                " comments";
-
-        return details;
+    String getAuthor()
+    {
+        return author;
     }
 
+    String getCreatedTime()
+    {
+        Date currentTime = new Date();
+
+
+        long diff = currentTime.getTime() - created_at.getTime();
+
+        long diffSeconds = diff / 1000 % 60;
+        long diffMinutes = diff / (60 * 1000) % 60;
+        long diffHours = diff / (60 * 60 * 1000) % 24;
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+
+        if (diffDays == 0)
+            if (diffHours == 0)
+                if(diffMinutes ==0)
+                    return "just now";
+                else if (diffMinutes == 1)
+                    return diffMinutes + " min";
+                else
+                    return diffMinutes + " mins";
+            else if (diffHours == 1)
+                return diffHours + " hr";
+            else
+                return diffHours + " hrs";
+        else if (diffDays == 1)
+            return diffDays + " day";
+        else
+            return diffDays + " days";
+
+//
+//
+//        SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("hh:mm a");
+//        String formattedDate = simpleDateFormat.format(created_at);
+//        return formattedDate;
+    }
+
+
+
+
+    int getComments()
+    {
+        return numComments;
+    }
     String getTitle(){
         return title;
     }

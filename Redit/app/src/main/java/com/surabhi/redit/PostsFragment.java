@@ -166,9 +166,19 @@ public class PostsFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                 TextView postScore;
                 postScore = (TextView) convertView.findViewById(R.id.post_score);
 
+                TextView tv_postComments;
+                tv_postComments = (TextView) convertView.findViewById(R.id.tv_comments);
+
+                TextView tv_postAuthor;
+                tv_postAuthor = (TextView) convertView.findViewById(R.id.tv_author);
+
+
                 postTitle.setText(posts.get(position).getTitle());
-                postDetails.setText(posts.get(position).getDetails());
+                postDetails.setText(posts.get(position).getCreatedTime());
                 postScore.setText(posts.get(position).getScore());
+                tv_postComments.setText(posts.get(position).getComments()+"");
+                tv_postAuthor.setText("u/"+posts.get(position).getAuthor());
+
                 return convertView;
             }
 
