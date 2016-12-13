@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/grey_light"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        />
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_author"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/post_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/post_title"
+        android:paddingTop="10dp"
+        android:textColor="@color/grey_light"
+        android:textSize="14sp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_comments"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/ic_comments_grey_24"
+        android:layout_alignBottom="@+id/post_details"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_comments"
+        android:layout_alignBottom="@+id/post_details"
+        android:textSize="12sp"
+        android:paddingLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_thumbs_up"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/ic_thumb_up_24"
+        android:layout_toLeftOf="@+id/post_score"
+        android:layout_alignBottom="@+id/post_details"
+        />
+
+    <TextView
+        android:id="@+id/post_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/post_details"
+        android:textSize="14sp"
+        android:paddingLeft="10dp"
+        />
+</RelativeLayout>
